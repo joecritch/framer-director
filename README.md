@@ -1,8 +1,8 @@
 # Framer Director
 
-This is a quick, *opinionated* experiment at improving my workflow with the fresh V2 of <a href="http://www.framerjs.com/">Framer.js</a>, this iOS prototyping tool.
+This is a quick, *opinionated* experiment at improving my workflow with V2 of <a href="http://www.framerjs.com/">Framer.js</a>, this iOS prototyping tool.
 
-## Instantiation
+## Set up
 
 Include the `framer-director.js` file and then call this in your `app.js`:
 
@@ -10,15 +10,15 @@ Include the `framer-director.js` file and then call this in your `app.js`:
 var director = new FramerDirector(viewConfig, 200, 'ease-out');
 ```
 
-### Params
+***IMPORTANT: See the View Config section***
 
-So there are 3 constructor params:
+#### Params:
 
 1. View config object (see *View Config*)
 2. Duration (this is a global that's passed into all views. Currently no way to change this across different views)
 3. Curve (string): again, global, with no override option.
 
-## Naming convention for layer groups
+## Naming conventions
 
 + Sibling views: 'Foo-1', 'Foo-2', etc.
 + Child views: 'Foo-Bar' (where the parent is 'Foo')
@@ -94,6 +94,8 @@ Once you've got a director object constructed, you can use the 'setState' method
 director.setState('mySecondState', true);
 ```
 
+#### Params:
+
 1. The first param is the state alias.
 2. The second is an animation flag. Default: false)
 
@@ -113,9 +115,9 @@ var EASE_OUT_EXPO = 'bezier-curve(0.950, 0.050, 0.795, 0.035)';
 var STANDARD_DURATION = 300;
 var director = new FramerDirector(viewConfigObj, STANDARD_DURATION, EASE_OUT_EXPO);
 var toggler = utils.toggle('myFirstState', 'mySecondState');
-	PSD['Foo-1'].on('click', function(event) {
-		event.preventDefault();
-		var newState = toggler();
-		director.setState(newState, true);
-	});
+PSD['Foo-1'].on('click', function(event) {
+	event.preventDefault();
+	var newState = toggler();
+	director.setState(newState, true);
+});
 ```
