@@ -1,6 +1,6 @@
 # Framer Director
 
-This is a quick, *opinionated* experiment at improving my workflow with V2 of <a href="http://www.framerjs.com/">Framer.js</a>, this iOS prototyping tool.
+This is a quick, *opinionated* experiment at improving my workflow with V2 of <a href="http://www.framerjs.com/">Framer.js</a>, the iOS prototyping tool.
 
 ## Set up
 
